@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Club;
+use App\Models\Manager;
+use App\Models\Player;
+use App\Models\Stadium;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -84,18 +88,30 @@ class LandingController extends Controller
 
     // Custom
     public function clubs() {
-        return view('pages.landing-page.clubs');
+        
+        $clubs = Club::all();
+
+        return view('pages.landing-page.clubs', ['clubs' => $clubs]);
     }
 
     public function players() {
-        return view('pages.landing-page.players');
+        
+        $players = Player::all();
+
+        return view('pages.landing-page.players', ['players' => $players]);
     }
 
     public function managers() {
-        return view('pages.landing-page.managers');
+        
+        $managers = Manager::all();
+
+        return view('pages.landing-page.managers', ['managers' => $managers]);
     }
 
     public function stadiums() {
-        return view('pages.landing-page.stadiums');
+        
+        $stadiums = Stadium::all();
+
+        return view('pages.landing-page.stadiums', ['stadiums' => $stadiums]);
     }
 }
