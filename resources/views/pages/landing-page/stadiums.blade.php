@@ -39,64 +39,39 @@
 
                         <tbody class="bg-white divide-y divide-gray-200">
 
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full"
-                                                src="https://resources.premierleague.com/premierleague/badges/t8.svg"
-                                                alt="">
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Stamford Bridge
+                            @forelse ($stadiums as $stadium)
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <div class="flex-shrink-0 h-10 w-10">
+                                                <img class="h-10 w-10 rounded-full" src="{{ $stadium->club->logo ?? '' }}"
+                                                    alt="{{ 'logo of '.$stadium->club->name ?? '' }}">
                                             </div>
-                                            <div class="text-sm text-gray-500">
-                                                40,853
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    Chelsea FC
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    Stamford Bridge, Fulham Road, London, SW6 1HS
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="flex-shrink-0 h-10 w-10">
-                                            <img class="h-10 w-10 rounded-full"
-                                                src="https://resources.premierleague.com/premierleague/badges/t3.svg"
-                                                alt="">
-                                        </div>
-                                        <div class="ml-4">
-                                            <div class="text-sm font-medium text-gray-900">
-                                                Emirates Stadium
-                                            </div>
-                                            <div class="text-sm text-gray-500">
-                                                60,260
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">
+                                                    {{ $stadium->name ?? '' }}
+                                                </div>
+                                                <div class="text-sm text-gray-500">
+                                                    {{ number_format($stadium->capacity) ?? '' }}
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    Arsenal
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap">
-                                    Highbury House, 75 Drayton Park, London, N5 1BU
-                                </td>
-                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                    <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
-                                </td>
-                            </tr>
-
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        {{ $stadium->club->name ?? '' }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        {{ $stadium->address ?? '' }}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                        <a href="#" class="text-indigo-600 hover:text-indigo-900">Detail</a>
+                                    </td>
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td class="px-6 py-4 whitespace-nowrap">Data not found</td>
+                                </tr>
+                            @endforelse
                             <!-- More items... -->
                         </tbody>
                     </table>
