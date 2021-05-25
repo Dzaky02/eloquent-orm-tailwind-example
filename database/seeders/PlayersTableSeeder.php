@@ -15,9 +15,6 @@ class PlayersTableSeeder extends Seeder
      */
     public function run()
     {
-        // truncate db
-        DB::table('players')->truncate();
-        
         $players = [
             [
                 'clubs_id'      => 1,

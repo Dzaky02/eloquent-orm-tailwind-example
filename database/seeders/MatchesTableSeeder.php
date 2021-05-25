@@ -15,9 +15,6 @@ class MatchesTableSeeder extends Seeder
      */
     public function run()
     {
-        // truncate db
-        DB::table('matches')->truncate();
-
         $matches = [
             [
                 'clubs_id'      => 1,
