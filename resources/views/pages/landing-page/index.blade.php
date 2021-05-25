@@ -43,7 +43,7 @@
                                 class="btn-outline-header-2-3 font-normal text-black text-base py-4 px-6 rounded-xl focus:outline-none bg-transparent rounded hover:border-transparent"
                                 style="font-family: 'Poppins', sans-serif">
                                 <div class="flex items-center">
-                                    <img style="height: 20px;" class="mr-2" src="/assets/img/icon-1.png" alt="" />
+                                    <img style="height: 20px;" class="mr-2" src="{{ asset('/assets/img/icon-1.png') }}" alt="" />
                                     Tables
                                 </div>
                             </button>
@@ -53,7 +53,7 @@
 
                     <!-- Right Column -->
                     <div class="w-full lg:w-1/2 text-center justify-center flex pr-0">
-                        <img id="hero-header-2-3" src="/assets/img/hero-1.svg" alt="" />
+                        <img id="hero-header-2-3" src="{{ asset('/assets/img/hero-1.svg') }}" alt="" />
                     </div>
                 </div>
             </div>
