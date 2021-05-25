@@ -41,6 +41,6 @@ class Club extends Model
 
     public function match_rivals()
     {
-        return $this->hasOne('App\Models\Matches', 'rivals_id');
+        return $this->hasOne('App\Models\Matches', 'clubs_id');
     }
 }
