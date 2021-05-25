@@ -17,4 +17,14 @@ class Matches extends Model
         'created_at',
         'updated_at',
     ];
+
+    public function club()
+    {
+        return $this->belongsTo('App\Models\Club', 'clubs_id', 'id');
+    }
+
+    public function rival()
+    {
+        return $this->belongsTo('App\Models\Club', 'rivals_id', 'id');
+    }
 }

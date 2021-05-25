@@ -17,4 +17,9 @@ class Player extends Model
         'created_at',
         'updated_at',
     ];
+    
+    public function club()
+    {
+        return $this->belongsTo('App\Models\Club', 'clubs_id', 'id');
+    }
 }
